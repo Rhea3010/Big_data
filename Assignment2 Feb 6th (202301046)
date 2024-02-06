@@ -1,0 +1,172 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPwUVPMdifwc0nyoKaI19k1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Rhea3010/Big_data/blob/main/Assignment2%20Feb%206th%20(202301046)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "c0f5a5c7y2I9",
+        "outputId": "a65cbf2a-6ee3-430a-a0f2-62a5aaa7a618"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "hello\n"
+          ]
+        }
+      ],
+      "source": [
+        "#Q1\n",
+        "import numpy as np\n",
+        "array1=np.array([1, 2, 3, 6, 4, 5])\n",
+        "array2=np.flip(arr1)\n",
+        "print(array2)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q2\n",
+        "import numpy as np\n",
+        "\n",
+        "arr1 = np.array([[1, 2], [3, 4]])\n",
+        "arr2 = np.array([[1, 2], [3, 4]])\n",
+        "\n",
+        "are_equal = np.array_equal(arr1, arr2)\n",
+        "\n",
+        "if are_equal:\n",
+        "    print(\"Arrays are equal.\")\n",
+        "else:\n",
+        "    print(\"Arrays are not equal.\")"
+      ],
+      "metadata": {
+        "id": "Ft5qC1AtzDQf",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "fead9878-5e5f-4733-8e13-6f42be1133de"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Arrays are equal.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q3\n",
+        "import numpy as np\n",
+        "gfg = np.matrix('[4, 1, 9; 12, 3, 1; 4, 5, 6]')\n",
+        "array_sum= np.sum(gfg)\n",
+        "array_sum_rowwise=np.sum(gfg,axis=1)\n",
+        "array_sum_columnwise=np.sum(gfg,axis=0)\n",
+        "print(\"Sum of all elements:\", array_sum)\n",
+        "print(\"Sum of all elements row-wise\",array_sum_rowwise)\n",
+        "print(\"Sum of all elements column-wise\",array_sum_columnwise)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JrNPHUDOchap",
+        "outputId": "4c0ccf8d-088e-4af3-d37d-8bdbcc1c396d"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Sum of all elements: 45\n",
+            "Sum of all elements row-wise [[14]\n",
+            " [16]\n",
+            " [15]]\n",
+            "Sum of all elements column-wise [[20  9 16]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q4\n",
+        "import numpy as np\n",
+        "x = np.array([1, 2, 3, 4, 5, 1, 2, 1, 1, 1])\n",
+        "y = np.array([1, 1, 1, 2, 3, 4, 2, 4, 3, 3, ])\n",
+        "frequent_value1, counts1 = np.unique(x, return_counts=True)\n",
+        "frequent_value2, counts2 = np.unique(y, return_counts=True)\n",
+        "frequent_index1 = np.where(x == frequent_value1[counts1.argmax()])[0]\n",
+        "frequent_index2 = np.where(y == frequent_value2[counts2.argmax()])[0]\n",
+        "print(\"Most frequent value:\", frequent_value1[counts1.argmax()])\n",
+        "print(\"Indices:\", frequent_index1)\n",
+        "print(\"Most frequent value:\",frequent_value2[counts2.argmax()])\n",
+        "print(\"Indices:\", frequent_index2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "553JL0Yjc88i",
+        "outputId": "249241c1-2ceb-4f23-e575-085304856cb3"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Most frequent value: 1\n",
+            "Indices: [0 5 7 8 9]\n",
+            "Most frequent value: 1\n",
+            "Indices: [0 1 2]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "H2E69cMedQrZ"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
