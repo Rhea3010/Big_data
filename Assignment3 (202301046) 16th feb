@@ -1,0 +1,154 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMr3Eaty/luxdUROzQC4pkv",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Rhea3010/Big_data/blob/main/Assignment3%20(202301046)%2016th%20feb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "c0f5a5c7y2I9",
+        "outputId": "e5a0abc4-5208-465a-e0ee-4d40602da09b"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  Tid Refund Marital Status Taxable Income Cheat\n",
+            "0   1    Yes         Single           125k    No\n",
+            "1   2     No        Married           100k    No\n",
+            "2   3     No         Single            70k    No\n",
+            "3   4    Yes        Married           120k    No\n",
+            "4   5     No       Divorced            95k   Yes\n",
+            "5   6     No        Married            60k    No\n",
+            "6   7    Yes       Divorced           220k    No\n",
+            "7   8     No         Single            85k   Yes\n",
+            "8   9     No         Maried            75k    No\n",
+            "9  10     No         Single            90k   Yes\n"
+          ]
+        }
+      ],
+      "source": [
+        "import pandas as pd\n",
+        "dataset={\n",
+        "    \"Tid\":[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\"],\n",
+        "    \"Refund\":[\"Yes\",\"No\",\"No\",\"Yes\",\"No\",\"No\",\"Yes\",\"No\",\"No\",\"No\"],\n",
+        "    \"Marital Status\":[\"Single\",\"Married\",\"Single\",\"Married\",\"Divorced\",\"Married\",\"Divorced\",\"Single\",\"Married\",\"Single\"],\n",
+        "    \"Taxable Income\":[\"125k\",\"100k\",\"70k\",\"120k\",\"95k\",\"60k\",\"220k\",\"85k\",\"75k\",\"90k\"],\n",
+        "    \"Cheat\":[\"No\",\"No\",\"No\",\"No\",\"Yes\",\"No\",\"No\",\"Yes\",\"No\",\"Yes\"]\n",
+        "\n",
+        "}\n",
+        "data = pd.DataFrame(dataset)\n",
+        "print(data)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "first=data.loc[0]\n",
+        "print(first)\n",
+        "second=data.loc[4]\n",
+        "print(second)\n",
+        "print('*******')\n",
+        "third=data.loc[7]\n",
+        "print(third)\n",
+        "print('*******')\n",
+        "fourth=data.loc[8]\n",
+        "print(fourth)"
+      ],
+      "metadata": {
+        "id": "Ft5qC1AtzDQf",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "fdaa21d8-70da-4f20-d215-4daa7ab333f4"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Tid                    1\n",
+            "Refund               Yes\n",
+            "Marital Status    Single\n",
+            "Taxable Income      125k\n",
+            "Cheat                 No\n",
+            "Name: 0, dtype: object\n",
+            "Tid                      5\n",
+            "Refund                  No\n",
+            "Marital Status    Divorced\n",
+            "Taxable Income         95k\n",
+            "Cheat                  Yes\n",
+            "Name: 4, dtype: object\n",
+            "*******\n",
+            "Tid                    8\n",
+            "Refund                No\n",
+            "Marital Status    Single\n",
+            "Taxable Income       85k\n",
+            "Cheat                Yes\n",
+            "Name: 7, dtype: object\n",
+            "*******\n",
+            "Tid                    9\n",
+            "Refund                No\n",
+            "Marital Status    Maried\n",
+            "Taxable Income       75k\n",
+            "Cheat                 No\n",
+            "Name: 8, dtype: object\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "# Assuming your CSV file is named 'your_file.csv'\n",
+        "# You may need to upload the file to Colab first\n",
+        "\n",
+        "# Use the following code to upload the file if it's not already in the Colab environment\n",
+        "from google.colab import files\n",
+        "uploaded = files.upload()\n",
+        "\n",
+        "# Load the CSV file into a DataFrame\n",
+        "df = pd.read_csv('data.csv')\n",
+        "\n",
+        "# Display the contents of the DataFrame\n",
+        "df.head()"
+      ],
+      "metadata": {
+        "id": "-oXMOiQSqPIF"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
